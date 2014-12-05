@@ -15,6 +15,7 @@ class UnreadableData(Exception):
     pass
 
 
+
 class MyClass:
     """A simple example class"""
     def __init__(self):

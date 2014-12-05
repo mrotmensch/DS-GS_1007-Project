@@ -13,7 +13,7 @@ def user_location(address):
   if __builtin__.any(keyword in address for keyword in state_city):
     address_state = Geocoder.geocode(address)
   else:
-    address_state = Geocoder.geocode(address = "New York")
+    address_state = Geocoder.geocode(address + "New York")
   
   return address_state.formatted_address
 

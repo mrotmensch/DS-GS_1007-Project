@@ -1,7 +1,7 @@
 '''
 December 4, 2014
 
-@author: lucy wang
+@author: 
 '''
 
 from pygeocoder import Geocoder

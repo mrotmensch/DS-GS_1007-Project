@@ -2,10 +2,12 @@
 
 Dec 1, 2014
 
-@author: lucy wang
+@author: 
 
 '''
 
 class EmptyStringException(Exception):
   pass
 
+class UnreadableData(Exception):
+    pass

@@ -10,6 +10,7 @@ from pygeocoder import Geocoder
 import sys
 
 from Math_calculations.distance import *
+from geoCoding.geoCoding import *
 
 class UnreadableData(Exception):
     pass
@@ -20,6 +21,7 @@ class MyClass:
     """A simple example class"""
     def __init__(self):
         self.file_name = "NYC_Free_Public_Wifi.csv"
+        self.results_counter = 0
         try:
             self.data = pd.read_csv(self.file_name)
         except:
@@ -41,15 +43,23 @@ class MyClass:
         df_mask = self.clean_data.loc[(self.clean_data["Borough"] == city)]
         return df_mask
 
-    def find_loc(self, address):
+    def __find_loc(self, address):
         df = self.__df_boro(address)
+        lat2, long2 = get_coordinates(address)
+
         df["distance"] = df.apply(lambda row: distance(lat2,long2,row['Lat'], row['Long_']), axis=1)
         df_new = df.sort(columns = "distance")
         return df_new
 
-    #def search_results(self):
-    #    __find_loc(self)
+    def search_results(self, address, reset = False):
+        if reset!= False:
+            self.results_counter = 0
 
+        results = self.__find_loc(address)
+        print "Closest WIFI locations (results %d to %d )" %(self.results_counter, self.results_counter+5)
+        
+        print results.iloc[self.results_counter:self.results_counter+5]
+        self.results_counter +=5
 
 
 
@@ -59,5 +69,7 @@ x.cleanData()
 print x.clean_data.head()
 address = "390 South 2nd Street, Brooklyn, NY 11211, USA"
 
-print x.find_loc(address)
+x.search_results(address)
+x.search_results(address)
+
 

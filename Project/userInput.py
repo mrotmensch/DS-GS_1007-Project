@@ -8,8 +8,8 @@ import re
 import sys
 from pygeocoder import Geocoder
 from pygeolib import GeocoderError
-from geoCoding import user_location, get_coordinates
-from customExceptions import EmptyStringException
+from geoCoding.geoCoding import user_location, get_coordinates
+from customExceptions.customExceptions import EmptyStringException
 
 def get_manual_input():
   '''
@@ -43,10 +43,3 @@ def validate_address(address):
     print "The address entered cannot be found"
     sys.exit(1)
 
-if __name__ == '__main__':
-  address = get_manual_input()
-  address, lat, lon = convert_address(address)
-  print "address is: " + str(address)
-  print "lat: " + str(lat)
-  print "long: " + str(lon)
-    

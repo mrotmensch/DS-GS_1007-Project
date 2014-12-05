@@ -85,7 +85,7 @@ class NearestWifi:
         """
         df = self.__df_boro(address)
         lat2, long2 = get_coordinates(address)
-
+        print lat2,long2
         df["distance"] = df.apply(lambda row: distance(lat2,long2,row['Lat'], row['Long_']), axis=1)
         df_results = df.sort(columns = "distance")
         return df_results
@@ -110,11 +110,7 @@ class NearestWifi:
 
 
 
-x = NearestWifi()
 
-address = "390 South 2nd Street, Brooklyn, NY 11211, USA"
 
-print x.search_results(address)
-x.search_results(address)
 
 

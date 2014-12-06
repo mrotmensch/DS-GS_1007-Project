@@ -8,7 +8,11 @@ import re
 import sys
 from pygeocoder import Geocoder
 from pygeolib import GeocoderError
+<<<<<<< HEAD
+from geoCoding.geoCoding import user_location
+=======
 from geoCoding.geoCoding import user_location, get_coordinates
+>>>>>>> 2e977fa02516fc8ca5004310d2dc1bbcfc3463af
 from customExceptions.customExceptions import *
 
 def get_manual_input():
@@ -27,33 +31,11 @@ def convert_address(address_input):
 
   user_location and get_coordinates are functions built in the geoCoding module
   '''
-  address = validate_address(address_input)
-  if address != "Not a Valid Address":
-    if validate_ny_address(address):
-      address = user_location(address_input)
-      return address
-    else:
-      raise NotInNYException
-      print "This address is not in New York"
-  else:
-    raise InvalidInputException
-    print "Address entered is not valid"
-  
-def validate_address(address):
-  '''
-  this function checks whether the user input is a valid address
-  '''
   try:
-    address = Geocoder.geocode(address)
+    address = user_location(address)
   except GeocoderError:
-    return "Not a Valid Address"
+    print "Address entered is not valid"
 
   return address
 
-def validate_ny_address(address):
-
-  if address.administrative_area_level_1 != "New York":
-    return False
-  else:
-    return True
      

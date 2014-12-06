@@ -72,8 +72,11 @@ class NearestWifi:
             df_mask: a pandas DF that is t subset of self.clean_data
         """
         self.__cleanData()
-        street, city, state, zipcode = address.replace(' ','').split(",")
-        df_mask = self.clean_data.loc[(self.clean_data["Borough"] == city)]
+        something_unknown = address.sublocality
+        #print "something_unknown", something_unknown
+        #street, city, state, zipcode = address.replace(' ','').split(",")
+        #print "************* city"
+        df_mask = self.clean_data.loc[(self.clean_data["Borough"] == address.sublocality)]
         return df_mask
 
     def __find_loc(self, address):
@@ -83,9 +86,13 @@ class NearestWifi:
         Returns:
             df_results: a dataframe of Wifi spots in the borough sorted by distance to the addres of interest.
         """
-        df = self.__df_boro(address)
-        lat2, long2 = get_coordinates(address)
-        print lat2,long2
+        
+        address_info = Geocoder.geocode(address)
+        lat2, long2 = address_info.coordinates
+
+        df = self.__df_boro(address_info)
+
+        #print "df_head", df.head()
         df["distance"] = df.apply(lambda row: distance(lat2,long2,row['Lat'], row['Long_']), axis=1)
         df_results = df.sort(columns = "distance")
         return df_results
@@ -98,14 +105,18 @@ class NearestWifi:
         Returns:
             results_subset: 5 lines from the ordered results dataframe.
         """
+
         results = self.__find_loc(address)
 
         if reset!= False:
             self.results_counter = 0
         print "Closest WIFI locations (results %d to %d )" %(self.__results_counter, self.__results_counter+5)
         
-        results_subset =  results.iloc[self.__results_counter:self.__results_counter+5]
+        columns_of_interest = ['Type', 'Provider', 'Location', 'Location_T', 'SSID', 'distance']
+        results_subset  = results[columns_of_interest]
+        results_subset =  results_subset.iloc[self.__results_counter:self.__results_counter+5]
         self.__results_counter +=5
+
         return results_subset
 
 

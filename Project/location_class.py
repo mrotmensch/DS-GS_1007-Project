@@ -85,24 +85,16 @@ class NearestWifi:
         """
         
         address_info = Geocoder.geocode(address)
-        lat2, long2 = address_info.coordinates
+        self.lat, self.long = address_info.coordinates
 
         df = self.__df_boro(address_info)
 
         #print "df_head", df.head()
-        df["distance"] = df.apply(lambda row: distance(lat2,long2,row['Lat'], row['Long_']), axis=1)
+        df["distance"] = df.apply(lambda row: distance(self.lat, self.long,row['Lat'], row['Long_']), axis=1)
         df_results = df.sort(columns = "distance")
         return df_results
 
-    #def end_of_dataframe(self):
-        """ checks if the 
-        Args:
-            Address: string. An address formatted by the Geocoder package.
-            reset: Boolean. determined whether or not to reser self.__results_counter
-        Returns:
-            results_subset: 5 lines from the ordered results dataframe.
-        """
-
+ 
     def search_results(self, address, reset = False):
         """ Method that calls the __find_loc() methos and displays the resulting dataframe, 5 results at a time.
         Args:
@@ -127,6 +119,7 @@ class NearestWifi:
             results_subset  = results[columns_of_interest]
             results_subset =  results_subset.iloc[self.__results_counter:self.__results_counter+5]
             self.__results_counter +=5
+            
 
         return results_subset
 

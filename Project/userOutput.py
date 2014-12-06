@@ -18,7 +18,7 @@ def output_map(user_lat, user_long,lllong,lllat,urlong,urlat,wifi):
   urcrnrlon = urlong +1
   urcrnrlat = urlat +1
 
-  map = Basemap(projection='merc', lat_0 = user_lat, lon_0 = user_long, resolution = 'h', area_thresh = 0.1 , llcrnrlon, llcrnrlat, urcrnrlon, urcrnrlat)
+  map = Basemap(projection='merc', lat_0 = user_lat, lon_0 = user_long, resolution = 'h', area_thresh = 0.1 , llcrnrlon=llcrnrlon, llcrnrlat=llcrnrlat, urcrnrlon=urcrnrlon, urcrnrlat=urcrnrlat)
    
   map.drawcoastlines()
   map.drawcountries()

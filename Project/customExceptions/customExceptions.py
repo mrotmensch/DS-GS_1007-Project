@@ -10,4 +10,10 @@ class EmptyStringException(Exception):
   pass
 
 class UnreadableData(Exception):
-    pass
+  pass
+
+class NotInNYException(Exception):
+  pass
+
+class InvalidInputException(Exception):
+  pass

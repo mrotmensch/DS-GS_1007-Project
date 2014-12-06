@@ -27,11 +27,17 @@ def convert_address(address_input):
 
   user_location and get_coordinates are functions built in the geoCoding module
   '''
-  validate_address(address_input)
-  address = user_location(address_input)
-  latitude, longitude = get_coordinates(address)
-
-  return address, latitude, longitude
+  address = validate_address(address_input)
+  if address != "Not a Valid Address":
+    if validate_ny_address(address):
+      address = user_location(address_input)
+      return address
+    else:
+      raise NotInNYException
+      print "This address is not in New York"
+  else:
+    raise InvalidInputException
+    print "Address entered is not valid"
   
 def validate_address(address):
   '''
@@ -40,6 +46,14 @@ def validate_address(address):
   try:
     address = Geocoder.geocode(address)
   except GeocoderError:
-    print "The address entered cannot be found"
-    sys.exit(1)
+    return "Not a Valid Address"
 
+  return address
+
+def validate_ny_address(address):
+
+  if address.administrative_area_level_1 != "New York":
+    return False
+  else:
+    return True
+     

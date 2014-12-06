@@ -1,12 +1,12 @@
 from location_class import *
-from userInput import get_manual_input, convert_address, validate_address
+from userInput import get_manual_input, convert_address
 import sys
 
 def main():
   address = get_manual_input()
   address= convert_address(address)
   
-  #print address
+  print address
   wifi = NearestWifi()
   print wifi.search_results(address)
   

@@ -4,9 +4,21 @@ import matplotlib.pylot as plt
 import numpy as np
 
 def output_map(user_lat, user_long,lllong,lllat,urlong,urlat,wifi):
+  """ user_lat, user_long,
+  lllong: min of 5 long 
+  lllat:  min 5 lat 
+  urlong:
+  urlat:
+  wifi:
+  """
   pylab.rcParams['figure.figsize'] = (8.0,6.4)
 
-  map = Basemap(projection='merc', lat_0 = user_lat, lon_0 = user_long, resolution = 'h', area_thresh = 0.1 , llcrnrlon = lllong, llcrnrlat= lllat, ,urcrnrlon = urlong, urcrnrlat = urlat)
+  llcrnrlon = lllong -1
+  llcrnrlat= lllat -1
+  urcrnrlon = urlong +1
+  urcrnrlat = urlat +1
+
+  map = Basemap(projection='merc', lat_0 = user_lat, lon_0 = user_long, resolution = 'h', area_thresh = 0.1 , llcrnrlon = lcrnrlon, llcrnrlat= lcrnrlat, ,urcrnrlon = urcrnrlon, urcrnrlat = urcrnrlat)
    
   map.drawcoastlines()
   map.drawcountries()

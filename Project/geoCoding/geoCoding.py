@@ -17,7 +17,4 @@ def user_location(address):
   
   return address_state.formatted_address
 
-def get_coordinates(address):
-  address = Geocoder.geocode(address)
-  return address.coordinates
 

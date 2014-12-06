@@ -1,6 +1,5 @@
 import sys
 import math as mt
-import re
 import pandas as pd
 import numpy as np
 import urllib2
@@ -73,9 +72,7 @@ class NearestWifi:
         """
         self.__cleanData()
         something_unknown = address.sublocality
-        #print "something_unknown", something_unknown
-        #street, city, state, zipcode = address.replace(' ','').split(",")
-        #print "************* city"
+
         df_mask = self.clean_data.loc[(self.clean_data["Borough"] == address.sublocality)]
         return df_mask
 

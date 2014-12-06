@@ -29,6 +29,10 @@ def convert_address(address_input):
   user_location and get_coordinates are functions built in the geoCoding module
   '''
   try:
+    address = Geocoder.geocode(address_input)
+  except:
+    print "Invalid Address entered"
+  try:
     address = user_location(address_input)
   except GeocoderError:
     print "Address entered is not valid"

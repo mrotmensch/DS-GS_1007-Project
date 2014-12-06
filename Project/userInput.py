@@ -8,7 +8,11 @@ import re
 import sys
 from pygeocoder import Geocoder
 from pygeolib import GeocoderError
+<<<<<<< HEAD
 from geoCoding.geoCoding import user_location
+=======
+from geoCoding.geoCoding import user_location, get_coordinates
+>>>>>>> 2e977fa02516fc8ca5004310d2dc1bbcfc3463af
 from customExceptions.customExceptions import *
 
 def get_manual_input():

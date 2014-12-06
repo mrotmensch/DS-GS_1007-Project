@@ -85,12 +85,12 @@ class NearestWifi:
         """
         
         address_info = Geocoder.geocode(address)
-        self.lat, self.long = address_info.coordinates
+        self.lat, self.long_ = address_info.coordinates
 
         df = self.__df_boro(address_info)
 
         #print "df_head", df.head()
-        df["distance"] = df.apply(lambda row: distance(self.lat, self.long,row['Lat'], row['Long_']), axis=1)
+        df["distance"] = df.apply(lambda row: distance(self.lat, self.long_,row['Lat'], row['Long_']), axis=1)
         df_results = df.sort(columns = "distance")
         return df_results
 
@@ -115,11 +115,11 @@ class NearestWifi:
             sys.exit()
         else:
             print "Closest WIFI locations (results %d to %d )" %(self.__results_counter, self.__results_counter+5)
-            columns_of_interest = ['Type', 'Provider', 'Location', 'Location_T', 'SSID', 'distance']
-            results_subset  = results[columns_of_interest]
-            results_subset =  results_subset.iloc[self.__results_counter:self.__results_counter+5]
+            #columns_of_interest = ['Type', 'Provider', 'Location', 'Location_T', 'SSID', 'distance']
+            #results_subset  = results[columns_of_interest]
+            results_subset =  results.iloc[self.__results_counter:self.__results_counter+5]
             self.__results_counter +=5
-            
+
 
         return results_subset
 

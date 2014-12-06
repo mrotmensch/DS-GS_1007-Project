@@ -6,7 +6,7 @@ def main():
   address = get_manual_input()
   address,lat,lon = convert_address(address)
   
-  print address
+  #print address
   wifi = NearestWifi()
   print wifi.search_results(address)
   

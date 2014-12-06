@@ -9,7 +9,7 @@ import sys
 from pygeocoder import Geocoder
 from pygeolib import GeocoderError
 from geoCoding.geoCoding import user_location, get_coordinates
-from customExceptions.customExceptions import EmptyStringException
+from customExceptions.customExceptions import *
 
 def get_manual_input():
   '''

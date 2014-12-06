@@ -4,7 +4,7 @@ import sys
 
 def main():
   address = get_manual_input()
-  address,lat,lon = convert_address(address)
+  address= convert_address(address)
   
   #print address
   wifi = NearestWifi()
@@ -12,7 +12,7 @@ def main():
   
   while True:
     more = raw_input("Type Y for next 5 results: ")
-    if more == 'Y':
+    if more.lower() == 'y':
       print wifi.search_results(address)
     else:
       sys.exit()

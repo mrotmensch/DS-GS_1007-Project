@@ -12,6 +12,8 @@ from pygeolib import GeocoderError
 from geoCoding.geoCoding import user_location
 from customExceptions.customExceptions import *
 
+
+    
 def get_manual_input():
   '''
   this function takes an input from the user
@@ -29,20 +31,21 @@ def convert_address(address_input):
   user_location and get_coordinates are functions built in the geoCoding module
   '''
   
-  try: 
-    address = Geocoder.geocode(address_input)
-  except GeocoderError as G:
-    print "we should change this later"
+  #try: 
+  address = Geocoder.geocode(address_input)
+  #except GeocoderError as G:
+  #  print "we should change this later"
 
   if address.valid_address != True:
-    print "raise exception."
-    sys.exit()
+    raise Address_not_valid(Exception)
+    #print "raise exception."
+    #sys.exit()
 
 
-  try:
-    address = user_location(address_input)
-  except GeocoderError:
-    print "Address entered is not valid"
+  #try:
+  address = user_location(address_input)
+  #except GeocoderError:
+  #  print "Address entered is not valid"
 
   return address
 

@@ -54,7 +54,7 @@ class NearestWifi:
             Creates the attribute self.clean_data containing the cleaned DataFrame.
         """
         columns = ['Boro','Type','Provider','Name','Location','Lat','Long_','X','Y','Location_T','City','SSID']
-        df_cut = self.__data[columns]
+        df_cut = self.__data[columns].copy()
         boro = {'BK': 'Brooklyn', 'MN': 'Manhattan', 'SI':'Staten Island', 'QU':'Queens', 'BX':'Bronx'}
         temp = df_cut['Boro'].apply(lambda name: boro[name])
         df_cut['Borough'] = temp
@@ -88,9 +88,8 @@ class NearestWifi:
         address_info = Geocoder.geocode(address)
         self.lat, self.long_ = address_info.coordinates
 
-        df = self.__df_boro(address_info)
+        df = self.__df_boro(address_info).copy()
 
-        #print "df_head", df.head()
         df["distance"] = df.apply(lambda row: distance(self.lat, self.long_,row['Lat'], row['Long_']), axis=1)
         df_results = df.sort(columns = "distance")
         return df_results

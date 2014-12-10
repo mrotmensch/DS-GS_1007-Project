@@ -1,14 +1,19 @@
-import math
+'''
+Created by: Lucy Wang
+Modified: Maya Rotmensch and Lucy Wang
+'''
 
-
-
+import numpy as np
 
 
 def distance(lat1, long1, lat2, long2):
-
+    """ 
+      TODO.
+        
+    """ 
     # Convert latitude and longitude to 
     # spherical coordinates in radians.
-    degrees_to_radians = math.pi/180.0
+    degrees_to_radians = np.pi/180.0
 
     # phi = 90 - latitude
     phi1 = (90.0 - lat1)*degrees_to_radians
@@ -19,17 +24,9 @@ def distance(lat1, long1, lat2, long2):
     theta2 = long2*degrees_to_radians
         
     # Compute spherical distance from spherical coordinates.
-        
-    # For two locations in spherical coordinates 
-    # (1, theta, phi) and (1, theta, phi)
-    # cosine( arc length ) = 
-    #    sin phi sin phi' cos(theta-theta') + cos phi cos phi'
-    # distance = rho * arc length
 
-    cos = (math.sin(phi1)*math.sin(phi2)*math.cos(theta1 - theta2) + 
-           math.cos(phi1)*math.cos(phi2))
-    arc = math.acos( cos ) * 3960
+    cos = (np.sin(phi1)*np.sin(phi2)*np.cos(theta1 - theta2) + 
+           np.cos(phi1)*np.cos(phi2))
+    arc = np.arccos( cos ) * 3960
     
-    # Remember to multiply arc by the radius of the earth 
-    # in your favorite set of units to get length.
     return arc

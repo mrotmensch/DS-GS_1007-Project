@@ -1,7 +1,15 @@
+
+'''
+Created by: Lucy Wang.
+Modified by: Maya Rotmensch and Lucy Wang.
+
+'''
+
+
 from Classes.location_class import *
 from userInput import get_manual_input, convert_address
 from userOutput import output_map, get_output_coord
-from geoCoding.mapOutput import mapOutput, mapImage,closeMap
+from geoCoding.mapOutput import mapOutput, mapImage
 import sys
 
 def main():
@@ -53,6 +61,6 @@ def main():
   
 
 if __name__ == '__main__':
-  #try:
+
   main()
   

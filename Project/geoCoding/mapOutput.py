@@ -1,9 +1,7 @@
 '''
+Created by: Lucy Wang
 
-Dec 8, 2014
-
-@author: 
-
+Modified by: Lucy Wang and Maya Rotmensch
 '''
 
 from motionless import *
@@ -13,12 +11,24 @@ import os
 import urllib
 
 def getCoordinates(plot_results):
+  """ This function changes the format of the 5 results we wish to plot on the map into an easily plotted format.
+    Args:
+        plot_results : a pandas DataFrame containing information on the 5 closest free WiFi locations.
+    Returns:
+        lon: list of longitude of  the 5 closest locations.
+        lat : list of latitude of  the 5 closest locations.
+    
+  """  
   lon = list(plot_results.Long_)
   lat = list(plot_results.Lat)
 
   return lon, lat
 
 def mapOutput(user_lon, user_lat, search_results):
+  """ 
+  TODO.
+    
+  """  
   dmap = DecoratedMap()
   dmap.add_marker(LatLonMarker(lat = user_lat, lon = user_lon, label = 'A', color = 'blue'))
   
@@ -30,6 +40,10 @@ def mapOutput(user_lon, user_lat, search_results):
   return dmap.generate_url()
 
 def mapImage(url):
+  """ 
+  TODO.
+    
+  """ 
   buffer_image = StringIO(urllib.urlopen(url).read())
   image = Image.open(buffer_image)
   

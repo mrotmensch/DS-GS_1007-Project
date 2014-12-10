@@ -1,3 +1,8 @@
+'''
+Created by: Maya Rotmensch
+Modified by: Maya Rotmensch and Lucy Wang.
+'''
+
 import unittest
 from userInput import *
 
@@ -15,14 +20,6 @@ class TestUserInterface(unittest.TestCase):
             5) user_input_invalid3: an example of input which the geocoder might be able to autocorrect, but will register as invalid. 
             6) user_input_invalid4: an example of input which the geocoder might be able to autocorrect, but will register as invalid.
 
-        #we expect the geocoder not to find any results --> geocoderError
-        self.user_input3 = " "
-        self.user_input4 = "easdjb"
-        
-
-        #we expect the geocoder to be able to find an address, however format is invalid --> Address_not_valid
-        self.user_input5 = "4"
-        self.user_input6 
 
         Methods:
             1) setUp

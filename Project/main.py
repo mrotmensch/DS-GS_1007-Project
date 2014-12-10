@@ -9,6 +9,7 @@ import requests
 from Classes.location_class import *
 from userInterface.userInput import get_manual_input, convert_address
 from graphicOutput.mapOutput import mapOutput, mapImage
+from graphicOutput.heatmap import heat_map
 import sys
 
 def main():
@@ -29,6 +30,8 @@ def main():
       url = mapOutput(wifi.long_, wifi.lat,search_results)
       image = mapImage(url)
       image.show()
+
+      heat_map(wifi.clean_data)
       break
     
     except requests.ConnectionError as c:

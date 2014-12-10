@@ -4,7 +4,7 @@ Modified by: Maya Rotmensch and Lucy Wang.
 '''
 
 import unittest
-from userInput import *
+from userInterface.userInput import *
 
 
 

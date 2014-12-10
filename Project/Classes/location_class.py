@@ -38,7 +38,7 @@ class NearestWifi:
             None.
             Creates the attribute self.__data containing the loaded DataFrame.
         """
-        self.__file_name = "NYC_Free_Public_Wifi.csv"
+        self.__file_name = "data/NYC_Free_Public_Wifi.csv"
         self.__results_counter = 0
         try:
             self.__data = pd.read_csv(self.__file_name)

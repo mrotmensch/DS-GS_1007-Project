@@ -5,11 +5,10 @@ Modified by: Maya Rotmensch and Lucy Wang.
 
 '''
 
-
+import requests
 from Classes.location_class import *
-from userInput import get_manual_input, convert_address
-from userOutput import output_map, get_output_coord
-from geoCoding.mapOutput import mapOutput, mapImage
+from userInterface.userInput import get_manual_input, convert_address
+from graphicOutput.mapOutput import mapOutput, mapImage
 import sys
 
 def main():
@@ -31,7 +30,10 @@ def main():
       image = mapImage(url)
       image.show()
       break
-
+    
+    except requests.ConnectionError as c:
+      print "Please make sure you are connected to the internet"
+    
     except UnreadableData as u:
       print u
 
@@ -47,7 +49,7 @@ def main():
     more = raw_input("Type Y for next 5 results or C to change address: ")
     if more.lower() == 'y':
       search_results = wifi.search_results(address)
-      print search_results[show_results]#.reset_index(drop = True)
+      print search_results[show_results].reset_index(drop = True)
       
       url = mapOutput(wifi.long_, wifi.lat,search_results)
       image = mapImage(url)

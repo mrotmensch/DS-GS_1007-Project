@@ -34,6 +34,3 @@ def mapImage(url):
   image = Image.open(buffer_image)
   
   return image
-
-def closeMap():
-  os.popen('killall display')

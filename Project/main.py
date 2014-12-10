@@ -38,12 +38,12 @@ def main():
   while True:
     more = raw_input("Type Y for next 5 results or C to change address: ")
     if more.lower() == 'y':
-      closeMap()
       search_results = wifi.search_results(address)
       print search_results[show_results]#.reset_index(drop = True)
       
-      '''url = mapOutput(wifi.long_,wifi.lat,search_results)
-      image = mapImage(url)'''
+      url = mapOutput(wifi.long_, wifi.lat,search_results)
+      image = mapImage(url)
+      image.show()
       
     elif more.lower() == 'c':
       main()

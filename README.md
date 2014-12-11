@@ -1,7 +1,7 @@
 
 NYC Free Wifi Project 
 ======================
-Created by Lucy Wang and Maya Rotmesch.
+Created by Lucy Wang and Maya Rotmensch.
 Last Edits made: 12/13/2014
 
 

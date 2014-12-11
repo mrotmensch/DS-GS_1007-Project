@@ -1,7 +1,6 @@
 '''
-Dec 1 2014
-
-@author: lucy wang
+Created by Lucy Wang
+Modified by: Maya Rotmensch and Lucy Wang
 
 '''
 import re
@@ -15,8 +14,11 @@ from customExceptions.customExceptions import *
 
     
 def get_manual_input():
-  '''
-  this function takes an input from the user
+  ''' this function takes an input from the user.
+    Args:
+      None.
+    Returns:
+      string of user input.
   '''
   address_input = raw_input('Address to search: ')
   if address_input == "":
@@ -25,27 +27,22 @@ def get_manual_input():
   return address_input
 
 def convert_address(address_input):
-  '''
-  this function converts an inputed address into a geocoder formatted address and coordinates
+  ''' this function converts an inputed address into a geocoder formatted address and coordinates. user_location and get_coordinates are functions built in the geoCoding module.
 
-  user_location and get_coordinates are functions built in the geoCoding module
-  '''
-  
-  #try: 
+    Args:
+      address_input: string. user input.
+
+    Returns:
+      address: object. the corrected (and sometimes autocorrected) address ,that was originally inputed by the user, in a geoCoding format. The address will only be autocorrected if no matching address is found. the object contains other helpful attributes such as validity of address, city, state, etc.
+
+  ''' 
   address = Geocoder.geocode(address_input)
-  #except GeocoderError as G:
-  #  print "we should change this later"
 
   if address.valid_address != True:
     raise Address_not_valid(Exception)
-    #print "raise exception."
-    #sys.exit()
 
-
-  #try:
   address = user_location(address_input)
-  #except GeocoderError:
-  #  print "Address entered is not valid"
+
 
   return address
 

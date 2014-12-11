@@ -13,7 +13,17 @@ from graphicOutput.heatmap import heat_map
 from graphicOutput.barchart import plot_barchart
 import sys
 
+'''This program was created to help users identify public Wi-Fi locations that are closest to an address-of-interest.
+To do so, the user provides an address in NYC, including all 5 boroughs. 
+The program analyzes the address and presents the 5 nearest Wifi hot-spots to the user in table and map format. 
+The table output includes the following information about the WiFi spot: Name, Location, Location Type, SSID, WiFi Type, and Distance. To help to user locate these hot-spots easily, a map is provided with markers to indicate both the address the user searched for (in blue), and the locations of the hot-spots (red) numbered in the same order as the table. To help the user better understand the distribution of WiFi spots in the city,
+the program also produces and saves several figures displaying statistics about the free Wifi locations in NYC.'''
+
+
 def main():
+  '''
+  TODO
+  '''
 
   while True:
     try: 

@@ -1,3 +1,9 @@
+
+'''
+Created by Lucy Wang
+'''
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 from Classes.location_class import *

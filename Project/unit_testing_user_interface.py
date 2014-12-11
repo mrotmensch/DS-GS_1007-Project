@@ -20,7 +20,6 @@ class TestUserInterface(unittest.TestCase):
             5) user_input_invalid3: an example of input which the geocoder might be able to autocorrect, but will register as invalid. 
             6) user_input_invalid4: an example of input which the geocoder might be able to autocorrect, but will register as invalid.
 
-
         Methods:
             1) setUp
             2) test_parse_user_input
@@ -47,7 +46,7 @@ class TestUserInterface(unittest.TestCase):
 
 
     def test_parse_user_input(self):
-        """  test the raised errors of initial position string input by user"""
+        """  test the raised errors of string input by user"""
 
         convert_address(self.user_input_valid1)
         convert_address(self.user_input_valid2)

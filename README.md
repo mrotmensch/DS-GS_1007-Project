@@ -17,7 +17,7 @@ INTRODUCTION
 ------------
 
 This program was created to help users identify public Wi-Fi locations that are closest to an address-of-interest.
-To do so, the user provides the program with an address in NYC and the program finds the 5 nearest Wifi hot-spots and presents them to the user (in the terminal) from closest to farthest. In addition, in order to help to user locate these hot-spots more easily, a map is provided with marker to indicate both the address the user searched for (in blue), and the location of the hot-spots (red). Lastly, the program also saves several figures displaying statistics about the free Wifi locations in NYC.
+To do so, the user provides an address in NYC, including all 5 boroughs. The program analyzes the address and presents the 5 nearest Wifi hot-spots to the user in table and map format. The table output includes the following information about the WiFi spot: Name, Location, Location Type, SSID, WiFi Type, and Distance. To help to user locate these hot-spots easily, a map is provided with markers to indicate both the address the user searched for (in blue), and the locations of the hot-spots (red) numbered in the same order as the table. To help the user better understand the distribution of WiFi spots in the city, the program also produces and saves several figures displaying statistics about the free Wifi locations in NYC.
 
 
 REQUIREMENTS
@@ -29,10 +29,13 @@ In order to run this program successfully, you must ensure the following package
     * matplotlib - version 1.4.0
         can be installed via pip install matplotlib
     * pandas - version 15.1
-        can be install via pip pandas
+        can be install via pip install pandas
+    * numpy - version 1.9.0
+        can be downloaded from http://sourceforge.net/projects/numpy/files/
     * pygeocoder
         can be installed via pip install pygeocoder
     * motionless
+    	source for motionless can be found here: https://github.com/ryancox/motionless
         can be installed via pip install motionless
 
 

@@ -17,7 +17,7 @@ INTRODUCTION
 ------------
 
 This program was created to help users identify public Wi-Fi locations that are closest to an address-of-interest.
-To do so, the user provides the program with an address in NYC and the program finds the 5 nearest Wifi hot-spots and presents them to the user (in the terminal) from closest to farthest. In addition, in order to help to user locate these hot-spots more easily, a map is provided with marker to indicate both the address the user searched for (in blue), and the location of the hot-spots (red). Lastly, the program also saves several figures displaying statistics about the free Wifi locations in NYC.
+To do so, the user provides an address in NYC, including all 5 boroughs. The program analyzes the address and presents the 5 nearest Wifi hot-spots to the user in table and map format. The table output includes the following information about the WiFi spot: Name, Location, Location Type, SSID, WiFi Type, and Distance. To help to user locate these hot-spots easily, a map is provided with markers to indicate both the address the user searched for (in blue), and the locations of the hot-spots (red) numbered in the same order as the table. To help the user better understand the distribution of WiFi spots in the city, the program also produces and saves several figures displaying statistics about the free Wifi locations in NYC.
 
 
 REQUIREMENTS
@@ -29,10 +29,13 @@ In order to run this program successfully, you must ensure the following package
     * matplotlib - version 1.4.0
         can be installed via pip install matplotlib
     * pandas - version 15.1
-        can be install via pip pandas
+        can be install via pip install pandas
+    * numpy - version 1.9.0
+        can be downloaded from http://sourceforge.net/projects/numpy/files/
     * pygeocoder
         can be installed via pip install pygeocoder
     * motionless
+    	source for motionless can be found here: https://github.com/ryancox/motionless
         can be installed via pip install motionless
 
 
@@ -57,11 +60,11 @@ Once the user inputs a valid address:
     * A list of the 5 closest Wifi locations will be listed on the terminal screen with useful characteristics to help the user locate the hot-spot (such as: Name of hot-spot, location, location type, SSID - the name of network the user should look for, the type of the network - either free or limited-free, and the distance from the entered address). 
     * A map of the relevant area in NYC will be displayed with a blue marker labeling the address the user searched for (in blue), and a marker denoting the location of the hot-spots (red).
     * a heat-map figure showing the concentration of Wifi networks by a given provider will be saved to file as "heatmap.pdf"
-    * a bar graph showing TODO
+    * a bar chart showing showing the number of free Wifi networks by borough, saved as 'Free Wifi by Borough.png'
 
 after the output it displayed, the user will be prompted to either:
 
-    * type 'Y' to displayed the 5 next-closest Wifi hot-spots.
+    * type 'Y' to displayed the next 5 results ordered by distance from origin
     * type 'C' to search to a different address
     * type any other key to quit the program.
 

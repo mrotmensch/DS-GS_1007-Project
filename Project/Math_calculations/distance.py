@@ -1,6 +1,8 @@
 '''
 Created by: Lucy Wang
 Modified: Maya Rotmensch and Lucy Wang
+
+referenced codes from http://www.johndcook.com/blog/python_longitude_latitude/
 '''
 
 import numpy as np
@@ -8,7 +10,7 @@ import numpy as np
 
 def distance(lat1, long1, lat2, long2):
     """ 
-      TODO.
+      The following codes calculates the distance between two points based on each point's latitude and longitude.The distance is relative to Earth's radius, in miles.
         
     """ 
     # Convert latitude and longitude to 

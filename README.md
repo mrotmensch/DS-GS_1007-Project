@@ -60,11 +60,11 @@ Once the user inputs a valid address:
     * A list of the 5 closest Wifi locations will be listed on the terminal screen with useful characteristics to help the user locate the hot-spot (such as: Name of hot-spot, location, location type, SSID - the name of network the user should look for, the type of the network - either free or limited-free, and the distance from the entered address). 
     * A map of the relevant area in NYC will be displayed with a blue marker labeling the address the user searched for (in blue), and a marker denoting the location of the hot-spots (red).
     * a heat-map figure showing the concentration of Wifi networks by a given provider will be saved to file as "heatmap.pdf"
-    * a bar graph showing TODO
+    * a bar chart showing showing the number of free Wifi networks by borough, saved as 'Free Wifi by Borough.png'
 
 after the output it displayed, the user will be prompted to either:
 
-    * type 'Y' to displayed the 5 next-closest Wifi hot-spots.
+    * type 'Y' to displayed the next 5 results ordered by distance from origin
     * type 'C' to search to a different address
     * type any other key to quit the program.
 

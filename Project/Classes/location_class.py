@@ -115,11 +115,8 @@ class NearestWifi:
             sys.exit()
         else:
             print "Closest WIFI locations (results %d to %d )" %(self.__results_counter, self.__results_counter+5)
-            #columns_of_interest = ['Type', 'Provider', 'Location', 'Location_T', 'SSID', 'distance']
-            #results_subset  = results[columns_of_interest]
             results_subset =  results.iloc[self.__results_counter:self.__results_counter+5]
             self.__results_counter +=5
-
 
         return results_subset
 

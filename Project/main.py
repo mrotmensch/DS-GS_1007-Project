@@ -80,6 +80,10 @@ def main():
   
 
 if __name__ == '__main__':
-
-  main()
+  try:
+    main()
+  except KeyboardInterrupt as k:
+    print " \n you chose to terminate the program... goodbye!"
+    sys.exit()
   
+

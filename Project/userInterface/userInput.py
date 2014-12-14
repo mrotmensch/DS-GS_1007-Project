@@ -24,6 +24,9 @@ def get_manual_input():
   if address_input == "":
     raise EmptyStringException
 
+  if address_input == "exit":
+    sys.exit(1)
+
   return address_input
 
 def convert_address(address_input):

@@ -17,7 +17,7 @@ INTRODUCTION
 ------------
 
 This program was created to help users identify public Wi-Fi locations that are closest to an address-of-interest.
-To do so, the user provides an address in NYC, including all 5 boroughs. The program analyzes the address and presents the 5 nearest Wifi hot-spots to the user in table and map format. The table output includes the following information about the WiFi spot: Name, Location, Location Type, SSID, WiFi Type, and Distance. To help to user locate these hot-spots easily, a map is provided with markers to indicate both the address the user searched for (in blue), and the locations of the hot-spots (red) numbered in the same order as the table. To help the user better understand the distribution of WiFi spots in the city, the program also produces and saves several figures displaying statistics about the free Wifi locations in NYC.
+To do so, the user provides an address in NYC, including all 5 boroughs. The program analyzes the address and presents the 5 nearest Wifi hot-spots to the user in table and map format. The table output includes the following information about the WiFi spot: Name, Location, Location Type, SSID, WiFi Type, and Distance. To help the user locate these hot-spots easily, a map is provided with markers to indicate both the address the user searched for (in blue), and the locations of the hot-spots (red) numbered in the same order as the table. To help the user better understand the distribution of WiFi spots in the city, the program also produces and saves several figures displaying statistics about the free Wifi locations in NYC.
 
 
 REQUIREMENTS
@@ -57,10 +57,10 @@ If the user input cannot be automatically decoded by the pygeocoder module, the 
 
 Once the user inputs a valid address:
 
-    * A list of the 5 closest Wifi locations will be listed on the terminal screen with useful characteristics to help the user locate the hot-spot (such as: Name of hot-spot, location, location type, SSID - the name of network the user should look for, the type of the network - either free or limited-free, and the distance from the entered address). 
-    * A map of the relevant area in NYC will be displayed with a blue marker labeling the address the user searched for (in blue), and a marker denoting the location of the hot-spots (red).
+    * A list of the 5 closest Wifi locations will be showed on the terminal screen with useful characteristics to help the user locate the hot-spot (such as: Name of hot-spot, location, location type, SSID - the name of network the user should look for, the type of the network - either free or limited-free, and the distance from the entered address). 
+    * A map of the relevant area in NYC will be displayed with a blue marker labeling the address the user searched for (in blue), and markers denoting the locations of the hot-spots (red).
     * a heat-map figure showing the concentration of Wifi networks by a given provider will be saved to file as "heatmap.pdf"
-    * a bar chart showing showing the number of free Wifi networks by borough, saved as 'Free Wifi by Borough.png'
+    * a bar chart showing the number of free Wifi networks by borough, saved as 'Free Wifi by Borough.png'
 
 after the output it displayed, the user will be prompted to either:
 

@@ -59,17 +59,6 @@ def heat_map(DF):
 
     fig.set_size_inches(7,9)
 
-    plt.title("Heatmap showing the number of wifi connections in each borough \n the darker the color, the more Internet connections are available")  
-    plt.savefig("heatmap.pdf")
-
-
-
-if __name__ == '__main__':
-    address = get_manual_input()
-    address= convert_address(address)
-    wifi = NearestWifi()
-    search_results = wifi.search_results(address)
-
-    heat_map(wifi.clean_data)
+    plt.savefig("Heatmap showing the number of wifi connections in each borough.pdf")
 
 

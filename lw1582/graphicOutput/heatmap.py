@@ -44,7 +44,6 @@ def heat_map(DF):
     column_labels = map_data_trans.columns
     row_labels = map_data_trans.index
     row_labels = ['\n'.join(wrap(l.lower(),15)) for l in row_labels]
-    print map_data_trans.shape
 
     # want a more natural, table-like display
     ax.invert_yaxis()

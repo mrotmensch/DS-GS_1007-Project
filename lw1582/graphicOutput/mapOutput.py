@@ -26,7 +26,14 @@ def getCoordinates(plot_results):
 
 def mapOutput(user_lon, user_lat, search_results):
   """ 
-  TODO.
+  This function takes in the coordinates of user input address and the search results to return a url of a google map with the
+  coordinates marked
+  Args:
+        user_lon: longitute of user address
+        user_lat: latitude of user address
+        search_results : a pandas DataFrame containing information on the 5 closest free WiFi locations.
+    Returns:
+        dmap.generate_url(): an url of the google map that contains markers for the user input address and the 5 closest free WiFi locations
     
   """  
   dmap = DecoratedMap()
@@ -41,7 +48,11 @@ def mapOutput(user_lon, user_lat, search_results):
 
 def mapImage(url):
   """ 
-  TODO.
+  This function reads an url and opens the url as an image
+  Args:
+        url: an url address of the map
+  Returns:
+        image: an image of the url
     
   """ 
   buffer_image = StringIO(urllib.urlopen(url).read())

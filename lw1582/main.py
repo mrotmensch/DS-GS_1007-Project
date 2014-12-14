@@ -22,7 +22,11 @@ the program also produces and saves several figures displaying statistics about 
 
 def main():
   '''
-  TODO
+  This function the main function of the entire program. It searches for the closest free WiFi locations for any given user input address in NYC and outputs a map, dataframe, and several figures to help user find free WiFi spots near him/her.
+  Args:
+        None
+  Returns:
+        None
   '''
 
   while True:
